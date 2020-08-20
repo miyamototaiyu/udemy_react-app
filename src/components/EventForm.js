@@ -13,12 +13,12 @@ const EventForm = () => {
     // 画面のリロードをなくす
     e.preventDefault()
     // reducerのdispatchをここで呼べる
-    dispatch({
+    const hoge = dispatch({
       type: CREATE_EVENT,
       title,
       body
     })
-
+    
     // input内の初期valueをここで空にする
     // イベント作成後、フォームの中身が空になる 
     setTitle('')
@@ -46,7 +46,7 @@ const EventForm = () => {
           <textarea type="text" className="form-control" id="body" value={body} onChange={e => setBody(e.target.value)} />
         </div>
         <button className="btn btn-primary" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
-        <button className="btn btn-danger" onClick={deleteAllEvents} disabled={state.events.length === 0}>全てのイベントを削除する</button>
+        <button className="btn btn-danger" onClick={deleteAllEvents} disabled={state.length === 0}>全てのイベントを削除する</button>
       </form>
     </>
   )
