@@ -6,7 +6,10 @@ import EventForm from './EventForm'
 import AppContext from '../contexts/AppContext'
 
 const App = () => {
-  const initialState = { events: [] }
+  const initialState = {
+    events: [],
+    operationLogs: []
+  }
   // stateで状態を管理
   const [state, dispatch] = useReducer(reducer, initialState)
   
